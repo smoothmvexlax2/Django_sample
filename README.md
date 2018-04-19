@@ -1,2 +1,2 @@
 # Django_sample
-A Sample of the django web application I have been building.
+A sample of the django web application I have been building.
