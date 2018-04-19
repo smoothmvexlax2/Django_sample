@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'starthere:index' %}">Wodproj</a>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>
+      The account activation was invalid. Please try again.
+    </p>
+</div>
+{% endblock %}

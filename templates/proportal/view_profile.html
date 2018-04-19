@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>ProfessionalProfile</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>Professional Profile</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'proportal:pro_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{% url 'proportal:edit_profile' %}">Edit Profile</a></li>
+    <li><a href="{% url 'athportal:ath_home' %}">Athlete Portal</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>Username: {{user.username }}</p>
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Profile Picture: </p>
+    <img src="{{ MEDIA_URL }}{{ additions.user_pic }}" class="img-responsive"/>
+    <p>Company Name: {{ professional.company }}</p>
+    <p>Specialties: {{ professional.specialty }}</p>
+    <p>Credentials : {{ professional.Credentials }}</p>
+    <p>Bio: {{ professional.bio }}</p>
+</div>
+{% endblock %}

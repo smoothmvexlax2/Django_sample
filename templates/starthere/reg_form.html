@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>NewAccount</title>{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'starthere:index' %}">Wodproj</a>
+{% endblock %}
+
+{% block below_nav_header %}
+<div class="container">
+    <div class="page-header">
+        <h2>Create an Account</h2>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        <ul>
+            <li>Username: {{ account_form.username }}</li>
+            <li>First Name: {{ account_form.first_name }}</li>
+            <li>Last Name: {{ account_form.last_name }}</li>
+            <li>Email: {{ account_form.email }}</li>
+            <li>Password: {{ account_form.password1 }}</li>
+            <li>Confirm Password: {{ account_form.password2 }}</li>
+            <li>Profile Picture: {{ additions_form.user_pic }}</li>
+            <li>Pick your account type: {{ additions_form.user_type }}</li>
+        </ul>
+        <br>
+        {{athlete_form.as_table}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

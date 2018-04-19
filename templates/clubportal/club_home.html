@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{pagetitle}}</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>FitnessClub Portal</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'athportal:ath_home' %}">AthletePortal</a></li>
+<li><a href="{% url 'clubportal:register_staff' %}">AddStaff</a></li>
+<li><a href="{% url 'clubportal:register_manager' %}">AddManager</a></li>
+<li><a href="{% url 'clubportal:search_staff' %}">SearchStaff</a></li>
+<li><a href="{% url 'starthere:logout' %}">Logout</a></li>
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}

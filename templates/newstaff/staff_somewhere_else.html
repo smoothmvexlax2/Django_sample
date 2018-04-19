@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block below_nav_header %}
+    <h5>Staff Account Cannot Be Connected</h5>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>
+        According to WodProj's system, {{staffmember.first_name}} {{staffmember.last_name}}
+        is already a staff member at {{company.name}}. In order to create an account, {{staffmember.first_name}}
+        must create a new account or have someone from {{company.name}} disconnect their staff account.
+    </p>
+</div>
+{% endblock %}

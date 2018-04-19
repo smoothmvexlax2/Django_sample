@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block below_nav_header %}
+    <h5>Manager Account Successfully Created</h5>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>
+        {{manager.first_name}}'s account was successfully connected to their existing WodProj account.
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Logout</title>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'starthere:index' %}">Wodproj</a>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>You are Logged Out</h1>
+</div>
+{% endblock %}

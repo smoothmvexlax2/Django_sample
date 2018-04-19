@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>
+        {{newstaff.first_name}}'s account was succesfully connected as a
+        staff member.
+    </p>
+    <p>
+        If they don't not have a staff portal feature on their account,
+        please contact WodProj for help.
+    </p>
+</div>
+{% endblock %}

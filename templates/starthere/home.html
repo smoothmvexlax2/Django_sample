@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ pagetitle }}</title>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'starthere:index' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{% url 'starthere:login' %}">Login</a></li>
+    <li><a href="{% url 'starthere:register' %}">Register</a></li>
+{% endblock %}
+
+{% block below_nav_header %}
+<div class="container">
+    <h2> Welcome to WodProj!</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}

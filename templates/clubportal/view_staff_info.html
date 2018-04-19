@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>StaffAccount</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>Staff Member {{staff.first_name}} {{staff.last_name}}</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'clubportal:search_staff' %}">SearchStaff</a></li>
+<li><a href="{% url 'clubportal:edit_staff_info_with_uid' uid=staff.slug %}">EditStaff</a></li>
+<li><a href="{% url 'starthere:logout' %}">Logout</a></li>
+
+{% endblock %}
+
+{% block below_nav_header %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>DOB: {{staff.date_of_birth}}</p>
+    <p>Employee #: {{staff.idfrom_employer}}</p>
+    <p>Start Date: {{staff.start_date}}</p>
+    <p>Department: {{staff.department}}</p>
+    <p>Position: {{staff.position}}</p>
+</div>
+{% endblock %}

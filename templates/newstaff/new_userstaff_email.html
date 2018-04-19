@@ -1,0 +1,23 @@
+{% autoescape off %}
+Hello {{new_user.first_name}} {{new_user.last_name}},
+
+An WodProj Account has been created for you by {{club.name}}, please follow the instructions below:
+
+First: Write down your temporary username and password. No one else has this information, so don't lose it.
+Username = {{new_user.username}}
+Password = {{password}}
+
+Second: Once you login please create a new password and, if you'd like, a new username.
+
+Final Step:
+To initiate your {{club.name}} Wodproj Account,
+click the link below:
+
+http://{{ domain }}{% url 'starthere:activate' uidb64=uid token=token %}
+
+If clicking the link above doesn't work, please copy and paste the URL in a new browser
+window instead.
+
+Sincerely,
+The WodProj Team
+{% endautoescape %}

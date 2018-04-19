@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Edit Profile</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>Edit Profile</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'athportal:ath_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{% url 'athportal:change_password' %}">Change Password</a></li>
+    <li><a href="{% url 'athportal:edit_goals' %}">Edit Goals</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{account_form.as_ul}}
+        {{additions_form.as_ul}}
+        {{athlete_form.as_ul}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

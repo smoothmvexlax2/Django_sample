@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>
+      The user account you were looking for was not found.
+      Please confirm the email address is correct.
+    </p>
+</div>
+<div class="container">
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{newstaff_form.as_p}}
+        {{createstaff_form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

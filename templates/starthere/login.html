@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Login</title>{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'starthere:index' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{% url 'starthere:register' %}">Create Account</a></li>
+{% endblock %}
+
+{% block below_nav_header %}
+<div class="container">
+    <div class="page-header">
+        <h2>Login</h2>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <a href="{% url 'starthere:password_reset' %}">forgot password</a>
+</div>
+{% endblock %}

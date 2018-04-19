@@ -1,0 +1,23 @@
+from django.contrib import admin
+from athportal.models import *
+
+admin.site.register(WoStyle)
+admin.site.register(Cycle)
+admin.site.register(MiniCycle)
+admin.site.register(MesoCycle)
+admin.site.register(Wod)
+admin.site.register(Workout)
+admin.site.register(Method)
+admin.site.register(Movement)
+admin.site.register(MovementType)
+admin.site.register(MovementTypeCategory)
+admin.site.register(MovementScale)
+admin.site.register(AthleteGoal)
+admin.site.register(PersonalRecord)
+admin.site.register(Gym)
+admin.site.register(GymLocation)
+admin.site.register(Equipment)
+admin.site.register(CoreLift)
+admin.site.register(MainLift)
+admin.site.register(MainLiftGroup)
+admin.site.register(HeavyLiftTable)

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>SearchStaff</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>Search for a Staff Member</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'athportal:ath_home' %}">AthletePortal</a></li>
+<li><a href="{% url 'clubportal:search_staff' %}">SearchStaff</a></li>
+<li><a href="{% url 'starthere:logout' %}">Logout</a></li>
+
+{% endblock %}
+
+{% block below_nav_header %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="get" novalidate>
+        {% csrf_token %}
+        {{search_form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

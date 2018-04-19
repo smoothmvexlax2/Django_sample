@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Terminate</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>You are about to Terminate {{staff.first_name}} {{staff.last_name}}</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'clubportal:search_staff' %}">SearchStaff</a></li>
+<li><a href="{% url 'starthere:logout' %}">Logout</a></li>
+
+{% endblock %}
+
+{% block below_nav_header %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p> Are you sure you want to terminate {{staff.first_name}} {{staff.last_name}}?
+        their staff account will be deleted perminantly. If this is a mistake, a new
+        account will need to be created.
+    </p>
+    <td><a href="{% url 'clubportal:club_home' %}" type="button" class="btn btn-default">Nevermind</a></td>
+    <td><a href="{% url 'clubportal:terminate_employee_commit' uid=staff.slug %}" type="button" class="btn btn-danger">Terminate</a></td>
+</div>
+{% endblock %}

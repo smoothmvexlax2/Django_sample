@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block below_nav_header %}
+<div class="container">
+    <h5>Staff Account Successfully Created</h5>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <p>
+        {{first_name}}'s account was created and an email with the activation link was sent to
+        {{email}}. If this email is incorrect you will have to create a new staff account for
+        {{first_name}} with the correct email address. Make sure {{first_name}}
+        {{last_name}} activates their account. If any issues arise please contact WodProj for help.
+    </p>
+</div>
+{% endblock %}

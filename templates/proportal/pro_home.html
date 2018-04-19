@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>ProfessionalProfile</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>Professional Portal</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'proportal:pro_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{% url 'proportal:view_profile' %}">View Profile</a></li>
+    <li><a href="{% url 'athportal:ath_home' %}">Athlete Portal</a></li>
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}

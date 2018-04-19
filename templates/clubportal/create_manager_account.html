@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>CreateManagerProfile</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>Create A New Manager's Account</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block below_nav_header %}
+{% if issue %}
+<div class="container">
+    <p>
+        We did not find a User Account, with the given information.
+    </p>
+</div>
+<br>
+<br>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{newstaff_form.as_p}}
+        {{createstaff_form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

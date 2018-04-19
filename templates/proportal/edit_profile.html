@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>EditProfile</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>Edit Profile</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'proportal:pro_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{% url 'athportal:change_password' %}">Change Password</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{pro_form.as_p}}
+        {{account_form.as_p}}
+        {{additions_form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

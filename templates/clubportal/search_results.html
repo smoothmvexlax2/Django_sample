@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>SearchResults</title>
+{% endblock %}
+
+{% block above_nav %}
+<div class="container">
+    <h2>We Found These Staff Members</h2>
+</div>
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'clubportal:club_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+<li><a href="{% url 'clubportal:search_staff' %}">SearchStaff</a></li>
+<li><a href="{% url 'starthere:logout' %}">Logout</a></li>
+
+{% endblock %}
+
+{% block below_nav_header %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Last name</th>
+        <th>First name</th>
+        <th>Employee #</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for obj in staff %}
+        <tr>
+            <td>{{obj.last_name}}</td>
+            <td>{{obj.first_name}}</td>
+            <td>{{obj.idfrom_employer}}</td>
+            <td>{{obj.department}}</td>
+            <td>{{obj.position}}</td>
+            <td><a href="{% url 'clubportal:view_staff_info' uid=obj.slug %}" type="button" class="btn">ViewProfile</a></td>
+            <td><a href="{% url 'clubportal:edit_staff_info_with_uid' uid=obj.slug %}" type="button" class="btn btn-default">EditProfile</a></td>
+            <td><a href="{% url 'clubportal:terminate_employee' uid=obj.slug %}" type="button" class="btn btn-danger">Terminate</a></td>
+        </tr>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

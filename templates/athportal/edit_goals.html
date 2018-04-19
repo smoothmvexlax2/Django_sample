@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>EditGoals</title>
+{% endblock %}
+
+{% block above_nav %}
+
+{% endblock %}
+
+{% block home_url %}
+    <a class="navbar-brand" href="{% url 'athportal:ath_home' %}">Wodproj</a>
+{% endblock %}
+
+{% block navbar %}
+    {% if professional %}
+    <li><a href="{% url 'proportal:pro_home' %}">Professionals</a></li>
+    {% endif %}
+    {% if createpro %}
+    <li><a href="{% url 'athportal:create_professional_profile' %}">
+        Professionals
+        </a>
+    </li>
+    {% endif %}
+    <li><a href="{% url 'clubportal:club_home' %}">FitnessClub</a></li>
+    <li><a href="{% url 'athportal:view_profile' %}">Profile</a></li>
+    <li><a href="{% url 'starthere:logout' %}">Logout</a></li>
+{% endblock %}
+
+{% block below_nav_header %}
+<div class="container">
+    <h2> Please Complete the Questions Below: </h2>
+</div>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <form method="get" novalidate>
+        {% csrf_token %}
+        {{form.as_ul}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
